@@ -1,0 +1,105 @@
+/* 浅色主题 */
+:root[data-theme="light"] {
+  /* 字体 */
+  --font-family: 'LXGW WenKai', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  
+  /* 背景色 */
+  --bg-primary: #F5FBE6;
+  --bg-primary-rgb: 245, 251, 230;
+  --bg-secondary: #F5FBE6;
+  --bg-hover: #e8f5d0;
+  --bg-canvas: #F5FBE6;
+  
+  /* 文字色 */
+  --text-primary: #233D4D;
+  --text-secondary: #215E61;
+  --text-tertiary: #215E61;
+  
+  /* 边框色 */
+  --border-color: #d4e8d0;
+  --border-hover: #c0ddb8;
+  
+  /* 强调色 */
+  --accent-primary: #FE7F2D;
+  --accent-secondary: #215E61;
+  --accent-bg: #fff3e6;
+  --accent-bg-hover: #ffe8d1;
+  --accent-border: #ffd4a8;
+  --accent-border-hover: #ffc285;
+  
+  /* 渐变 */
+  --gradient-primary: linear-gradient(135deg, #215E61 0%, #233D4D 100%);
+  --gradient-logo: linear-gradient(135deg, #215E61 0%, #233D4D 100%);
+  --gradient-welcome: linear-gradient(135deg, #215E61 0%, #233D4D 100%);
+  
+  /* 危险操作 */
+  --danger-bg: #fee;
+  --danger-border: #fecaca;
+  --danger-text: #dc2626;
+  
+  /* 成功色 */
+  --success-bg: #d1fae5;
+  --success-border: #a7f3d0;
+  --success-text: #065f46;
+  
+  /* 阴影 */
+  --shadow-sm: 0 1px 3px rgba(35, 61, 77, 0.08);
+  --shadow-md: 0 4px 12px rgba(35, 61, 77, 0.12);
+  --shadow-lg: 0 8px 24px rgba(35, 61, 77, 0.15);
+  
+  /* 思维导图连接线颜色 */
+  --mindmap-line-color: #2a3a4d;
+}
+
+/* 暗色主题 */
+:root[data-theme="dark"] {
+  /* 字体 */
+  --font-family: 'LXGW WenKai', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  
+  /* 背景色 */
+  --bg-primary: #37353E;
+  --bg-primary-rgb: 55, 53, 62;
+  --bg-secondary: #44444E;
+  --bg-hover: #4f4f5a;
+  --bg-canvas: #2a2830;
+  
+  /* 文字色 - 增加对比度 */
+  --text-primary: #E8EDEF;
+  --text-secondary: #C5CDD1;
+  --text-tertiary: #A0A8AC;
+  
+  /* 边框色 */
+  --border-color: #5a5862;
+  --border-hover: #6d6a75;
+  
+  /* 强调色 */
+  --accent-primary: #FE7F2D;
+  --accent-secondary: #8B7070;
+  --accent-bg: #4a4248;
+  --accent-bg-hover: #564a52;
+  --accent-border: #6d5d65;
+  --accent-border-hover: #7f6f77;
+  
+  /* 渐变 */
+  --gradient-primary: linear-gradient(135deg, #715A5A 0%, #44444E 100%);
+  --gradient-logo: linear-gradient(135deg, #FE7F2D 0%, #FFA85C 50%, #FFD4A8 100%);
+  --gradient-welcome: linear-gradient(135deg, #44444E 0%, #37353E 100%);
+  
+  /* 危险操作 */
+  --danger-bg: #4a3838;
+  --danger-border: #6d5555;
+  --danger-text: #ffaaaa;
+  
+  /* 成功色 */
+  --success-bg: #3d4a42;
+  --success-border: #556d5f;
+  --success-text: #a0e6c0;
+  
+  /* 阴影 */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  
+  /* 思维导图连接线颜色 */
+  --mindmap-line-color: #a0b0c0;
+}
