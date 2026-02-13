@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VMind 思维导图框架测试</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .toolbar {
+      background: #fff;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar button {
+      padding: 8px 16px;
+      background: #4a90e2;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .toolbar button:hover {
+      background: #357abd;
+    }
+
+    .toolbar select {
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .mindmap-container {
+      flex: 1;
+      background: #fff;
+      position: relative;
+    }
+
+    .info {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 15px;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      font-size: 12px;
+      color: #666;
+    }
+
+    .info div {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="toolbar">
+      <button onclick="addNode()">添加节点</button>
+      <button onclick="removeNode()">删除选中</button>
+      <button onclick="toggleCollapse()">折叠/展开</button>
+      <button onclick="fitView()">适应视图</button>
+      <button onclick="zoomIn()">放大</button>
+      <button onclick="zoomOut()">缩小</button>
+      <button onclick="resetView()">重置视图</button>
+      
+      <select onchange="changeLayout(this.value)">
+        <option value="mindmap">思维导图</option>
+        <option value="tree-right">树形-右</option>
+        <option value="tree-down">树形-下</option>
+        <option value="radial">放射状</option>
+        <option value="fishbone">鱼骨图</option>
+        <option value="timeline">时间轴</option>
+      </select>
+      
+      <select onchange="changeTheme(this.value)">
+        <option value="default">默认主题</option>
+        <option value="dark">暗黑主题</option>
+        <option value="colorful">多彩主题</option>
+        <option value="minimal">极简主题</option>
+      </select>
+      
+      <button onclick="exportPNG()">导出PNG</button>
+      <button onclick="exportJSON()">导出JSON</button>
+      <button onclick="exportMarkdown()">导出Markdown</button>
+    </div>
+    
+    <div id="mindmap" class="mindmap-container">
+      <div class="info">
+        <div>📌 使用说明：</div>
+        <div>• 点击节点选中</div>
+        <div>• 拖拽节点移动</div>
+        <div>• 滚轮缩放</div>
+        <div>• 拖拽画布平移</div>
+        <div>• 双击节点编辑</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    // 注意：这是一个测试页面，实际使用时需要通过构建工具导入
+    console.log('VMind 思维导图框架测试页面')
+    console.log('框架位置: src/mindmap-core/')
+    console.log('请在 Vue3 项目中通过 import 导入使用')
+    
+    // 模拟数据
+    const testData = {
+      id: 'root',
+      label: 'VMind 思维导图框架',
+      children: [
+        {
+          id: 'features',
+          label: '核心特性',
+          children: [
+            { id: 'f1', label: '高性能渲染', children: [] },
+            { id: 'f2', label: '丰富的布局', children: [] },
+            { id: 'f3', label: '流畅动画', children: [] },
+            { id: 'f4', label: '完整交互', children: [] }
+          ]
+        },
+        {
+          id: 'architecture',
+          label: '架构设计',
+          children: [
+            { id: 'a1', label: '布局引擎', children: [] },
+            { id: 'a2', label: '渲染引擎', children: [] },
+            { id: 'a3', label: '事件管理', children: [] },
+            { id: 'a4', label: '动画引擎', children: [] }
+          ]
+        },
+        {
+          id: 'usage',
+          label: '使用场景',
+          children: [
+            { id: 'u1', label: 'AI + 思维导图', children: [] },
+            { id: 'u2', label: '知识管理', children: [] },
+            { id: 'u3', label: '项目规划', children: [] }
+          ]
+        }
+      ]
+    }
+    
+    console.log('测试数据:', testData)
+    console.log('框架已准备就绪，可以在 Vue3 项目中使用！')
+  </script>
+</body>
+</html>
+

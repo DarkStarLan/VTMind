@@ -1,0 +1,70 @@
+/**
+ * 自定义字体配置 - 霞鹜文楷
+ * LXGW WenKai (霞鹜文楷) - 开源中文字体
+ */
+
+/* 定义霞鹜文楷字体 */
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('/fonts/LXGWWenKai-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 应用字体到全局 */
+:root {
+  --font-family: 'LXGW WenKai', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  /* 优化字体渲染 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 确保所有元素都使用该字体 */
+* {
+  font-family: var(--font-family);
+}
+
+/* 思维导图节点字体 - 增强清晰度 */
+jmnode {
+  font-family: var(--font-family) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0.3px !important;
+  /* 优化文本渲染 */
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+  /* 增强对比度 */
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 根节点更大更清晰 */
+jmnode[nodeid]:first-child {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* 输入框和文本域 */
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 代码块保持等宽字体 */
+code,
+pre {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+

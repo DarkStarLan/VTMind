@@ -1,0 +1,72 @@
+/**
+ * jsMind 连接线优化样式
+ * 提升连接线的清晰度和视觉效果
+ */
+
+/* 全局 jsMind 容器优化 */
+jmnodes {
+  /* 启用硬件加速 */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Canvas 渲染优化 - 高清晰度 */
+jmnodes canvas {
+  /* 启用硬件加速 */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /* 启用抗锯齿以获得平滑的曲线 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* 强制使用 GPU 渲染 */
+  will-change: transform;
+  /* 确保 Canvas 使用实际像素 */
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* SVG 连接线优化 */
+jmnodes svg {
+  /* 精确渲染 */
+  shape-rendering: geometricPrecision;
+  /* 启用硬件加速 */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+jmnodes svg path {
+  /* 线条样式 - 增加宽度 */
+  stroke-width: 8px;
+  stroke: var(--mindmap-line-color, #2a3a4d);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  /* 优化渲染 */
+  vector-effect: non-scaling-stroke;
+  shape-rendering: geometricPrecision;
+  /* 增强清晰度 */
+  stroke-opacity: 1;
+}
+
+/* 展开/折叠按钮优化 */
+jmexpander {
+  border-width: 2px !important;
+  /* 增强对比度 */
+  opacity: 1 !important;
+}
+
+jmexpander:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* 选中节点的连接线高亮 */
+jmnode.selected ~ svg path,
+jmnode.selected + svg path {
+  stroke: #FE7F2D;
+  stroke-width: 4px;
+}
+
